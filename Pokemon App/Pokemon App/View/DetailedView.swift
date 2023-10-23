@@ -13,7 +13,9 @@ struct DetailedView: View {
     var body: some View {
         if let safePokemon = pokemon {
             VStack{
-                KFImage(URL(string: safePokemon.sprites.front_default)!);
+                KFImage(URL(string: safePokemon.sprites.other.artwork.front_default)!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill);
                 Text(safePokemon.name.capitalized).bold().italic().font(.title)
                 HStack{
                     VStack{
@@ -33,7 +35,6 @@ struct DetailedView: View {
                 }
             }
             .frame(maxWidth: .infinity);
-            
             List {
                 HStack(alignment: .center){
                     Spacer();
