@@ -10,7 +10,20 @@ struct ContentView: View {
         if searchText.isEmpty {
             return viewModel.pokemons
         } else {
-            return viewModel.pokemons.filter{$0.name.lowercased().contains(searchText.lowercased())}
+            return viewModel.pokemons.filter{
+                var abilityNames = [String]()
+                var typeNames = [String]()
+                $0.types.forEach { type in
+                    typeNames.append(type.type.name.lowercased())
+                }
+                $0.abilities.forEach { ability in
+                    abilityNames.append(ability.ability.name.lowercased())
+                }
+                return
+                $0.name.lowercased().contains(searchText.lowercased()) ||
+                typeNames.contains(searchText.lowercased()) ||
+                abilityNames.contains(searchText.lowercased())
+            }
         }
     }
     
@@ -41,7 +54,21 @@ struct ContentView: View {
             .searchable(
                 text: $searchText,
                 placement: .navigationBarDrawer(displayMode: .automatic),
-                prompt: "Ingresa el nombre del Pokemon")
+                prompt: "Filter by name, type or ability")
+            HStack{
+                if (viewModel.initialInfo?.previous) != nil {
+                    Button("Previous") {
+                        viewModel.previousPage()
+                    }
+                    .multilineTextAlignment(.leading)
+                }
+                if (viewModel.initialInfo?.next) != nil {
+                    Button("Next") {
+                        viewModel.nextPage()
+                    }
+                    .multilineTextAlignment(.trailing)
+                }
+            }
         }
     }
 }
