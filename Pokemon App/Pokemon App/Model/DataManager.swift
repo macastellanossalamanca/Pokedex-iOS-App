@@ -68,6 +68,7 @@ protocol DataManagerDelegate: AnyObject {
 
 protocol DataManagerProtocol {
     var delegate: DataManagerDelegate? { get set }
+    var cache: NSCache<NSString, StructWrapper<PokemonModel>> { get }
     func fetchPokemons(url: String)
     func fetchPokemon(name: String, url: String)
 }

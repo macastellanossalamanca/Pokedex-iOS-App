@@ -18,5 +18,8 @@ class DataManagerDelegateMock: DataManagerDelegate {
     func handleInitialInfo(info: InitialPokedexInfo){
         print("Fetched Info")
         initialInfo = info
+        initialInfo?.results.forEach { pokemon in
+            dataManager.fetchPokemon(name: pokemon.name, url: pokemon.url)
+        }
     }
 }
