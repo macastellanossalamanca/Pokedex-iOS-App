@@ -18,6 +18,7 @@ class PokemonViewModel: ObservableObject, DataManagerDelegate {
     }
     
     func handleInitialInfo(info: InitialPokedexInfo) {
+        print("ViewModelLoadingInfo")
         initialInfo = info
         initialInfo?.results.forEach { pokemon in
             dataManager.fetchPokemon(name: pokemon.name, url: pokemon.url)

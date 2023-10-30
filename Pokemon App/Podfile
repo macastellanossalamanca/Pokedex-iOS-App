@@ -4,3 +4,7 @@
 target 'Pokemon App' do
   pod 'Kingfisher', '~> 7.0'
 end
+
+target 'Pokemon AppTests' do
+  pod 'Kingfisher', '~> 7.0'
+end
