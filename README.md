@@ -1,3 +1,4 @@
+![Pokemon Logo and symbol, meaning, history, PNG, brand](https://github.com/macastellanossalamanca/Pokedex-iOS-App/assets/44925834/9e83750c-f0d1-45a3-962b-1cecc65a71d6)
 # Miguel Castellanos
 
 ## Pokedex iOS App
@@ -16,11 +17,6 @@
 
 - Just below you can find a video of the project running.
 
-  
-
-
-https://github.com/macastellanossalamanca/Pokedex-iOS-App/assets/44925834/8061e9fd-63c3-42bf-8ba7-cd7caa3a86c3
-
-
+https://github.com/macastellanossalamanca/Pokedex-iOS-App/assets/44925834/596c118f-1075-4ffd-ba51-617f57d46245
 
 
